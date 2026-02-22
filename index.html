@@ -57,10 +57,6 @@
   transition: transform 0.3s ease;  /* optional hover effect */
 }
 
-.envelope-img:hover {
-  transform: scale(1.05);           /* subtle hover grow effect */
-}
-
 .center {
   position: relative;
   height: 100vh;
@@ -87,13 +83,32 @@
 </audio>
 
 <div class="center">
-  <img id="start-btn" src="envelope.png" alt="Envelope" class="envelope-img">
+  <div class="envelope-wrapper" id="start-btn">
+    <img src="envelope.png" class="envelope base">
+    <img src="glowyenvelope.png" class="envelope glow">
+  </div>
 </div>
 
 <script>
   const button = document.getElementById("start-btn");
   const video = document.getElementById("bg-video");
   const audio = document.getElementById("bg-audio");
+
+ button.addEventListener("mouseenter", () => {
+  button.style.opacity = "0";
+  setTimeout(() => {
+    button.src = "glowyenvelope.png";
+    button.style.opacity = "1";
+  }, 125);
+});
+
+button.addEventListener("mouseleave", () => {
+  button.style.opacity = "0";
+  setTimeout(() => {
+    button.src = "envelope.png";
+    button.style.opacity = "1";
+  }, 125);
+});
 
   button.addEventListener("click", () => {
     video.style.opacity = "1";
