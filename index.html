@@ -45,7 +45,7 @@
   }
 
 .envelope-wrapper {
-  width: clamp(20px, 5vw, 100px);   /* 👈 change this to any size you want */
+  width: clamp(80px, 12vw, 180px);   /* 👈 change this to any size you want */
 }
 
 .envelope-wrapper img {
@@ -90,22 +90,6 @@
   const button = document.getElementById("start-btn");
   const video = document.getElementById("bg-video");
   const audio = document.getElementById("bg-audio");
-
- button.addEventListener("mouseenter", () => {
-  button.style.opacity = "0";
-  setTimeout(() => {
-    button.src = "glowyenvelope.png";
-    button.style.opacity = "1";
-  }, 125);
-});
-
-button.addEventListener("mouseleave", () => {
-  button.style.opacity = "0";
-  setTimeout(() => {
-    button.src = "envelope.png";
-    button.style.opacity = "1";
-  }, 125);
-});
 
   button.addEventListener("click", () => {
     video.style.opacity = "1";
