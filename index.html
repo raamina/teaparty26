@@ -52,17 +52,14 @@
   padding: 0;
 }
 
-/* Responsive envelope */
-.envelope {
-  width: clamp(1500px, 25vw, 300px);   /* scales with screen */
-  aspect-ratio: 16 / 9;               /* keeps proportions */
-  border: 1.2px solid white;
-  position: relative;
+.envelope-img {
+  width: clamp(80px, 15vw, 200px);  /* same responsive sizing */
+  cursor: pointer;                  /* shows pointer on hover */
+  transition: transform 0.3s ease;  /* optional hover effect */
 }
 
-/* Glow on hover */
-.envelope-btn:hover .envelope {
-  box-shadow: 0 0 14px rgba(255,255,255,0.8);
+.envelope-img:hover {
+  transform: scale(1.05);           /* subtle hover grow effect */
 }
 
 .center {
@@ -91,9 +88,7 @@
 </audio>
 
 <div class="center">
-  <button id="start-btn" class="envelope-btn">
-    <div class="envelope"></div>
-  </button>
+  <img id="start-btn" src="envelope.png" alt="Envelope" class="envelope-img">
 </div>
 
 <script>
