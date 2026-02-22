@@ -60,29 +60,6 @@
   position: relative;
 }
 
-/* Flap lines */
-.envelope::before,
-.envelope::after {
-  content: "";
-  position: absolute;
-  width: 1px;              /* true 1px thickness */
-  height: 100%;
-  background: white;
-  top: 0;
-  left: 50%;
-  transform-origin: top;
-}
-
-/* Left diagonal */
-.envelope::before {
-  transform: rotate(45deg);
-}
-
-/* Right diagonal */
-.envelope::after {
-  transform: rotate(-45deg);
-}
-
 /* Glow on hover */
 .envelope-btn:hover .envelope {
   box-shadow: 0 0 14px rgba(255,255,255,0.8);
