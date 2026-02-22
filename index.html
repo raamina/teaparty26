@@ -45,28 +45,48 @@
     transition: opacity 1.5s ease;
   }
 
-  /* Center button */
-  .center {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  .envelope-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
 
-  button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-    cursor: pointer;
-    letter-spacing: 2px;
-  }
+/* Responsive envelope */
+.envelope {
+  width: clamp(60px, 12vw, 140px);   /* scales with screen */
+  aspect-ratio: 8 / 5;               /* keeps proportions */
+  border: 1px solid white;
+  position: relative;
+}
 
-  button:hover {
-    background: white;
-    color: black;
-  }
+/* Flap lines */
+.envelope::before,
+.envelope::after {
+  content: "";
+  position: absolute;
+  width: 1px;              /* true 1px thickness */
+  height: 100%;
+  background: white;
+  top: 0;
+  left: 50%;
+  transform-origin: top;
+}
+
+/* Left diagonal */
+.envelope::before {
+  transform: rotate(45deg);
+}
+
+/* Right diagonal */
+.envelope::after {
+  transform: rotate(-45deg);
+}
+
+/* Glow on hover */
+.envelope-btn:hover .envelope {
+  box-shadow: 0 0 14px rgba(255,255,255,0.8);
+}
 
 </style>
 </head>
@@ -84,7 +104,9 @@
 </audio>
 
 <div class="center">
-  <button id="start-btn">Enter</button>
+  <button id="start-btn" class="envelope-btn">
+    <div class="envelope"></div>
+  </button>
 </div>
 
 <script>
