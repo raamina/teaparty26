@@ -44,19 +44,16 @@
     transition: opacity 1.5s ease;
   }
 
-  .envelope-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+.envelope-wrapper {
+  width: clamp(20px, 5vw, 100px);   /* 👈 change this to any size you want */
 }
 
-.envelope-img {
-  width: clamp(80px, 5vw, 200px);  /* same responsive sizing */
-  cursor: pointer;                  /* shows pointer on hover */
-  transition: transform 0.3s ease;  /* optional hover effect */
+.envelope-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
-
+ 
 .center {
   position: relative;
   height: 100vh;
