@@ -79,6 +79,18 @@
   align-items: center;      /* vertical center */
 }
 
+first-text {
+  position: absolute;       /* absolute positioning */
+  top: 50%;                 /* adjust Y position */
+  left: 50%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 2rem;
+  font-family: serif;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
 </style>
 </head>
 
@@ -101,6 +113,8 @@
   </div>
 </div>
 
+<div id="first-text">tea party 2026</div>
+
 <script>
   const button = document.getElementById("start-btn");
   const video = document.getElementById("bg-video");
@@ -112,7 +126,15 @@
     audio.play();
     document.querySelector(".landing").style.display = "none";
     button.style.display = "none";
+
+    // Show text after 3 seconds
+  setTimeout(() => {
+    const text = document.getElementById("first-text");
+    text.style.display = "block"; // appears instantly
+  }, 4000);  // 3000ms = 3 seconds
+   
   });
+
 </script>
 
 </body>
