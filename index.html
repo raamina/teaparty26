@@ -13,23 +13,22 @@
   }
 
   body {
-    background: black;
+    height: 100vh;
     overflow: hidden;
+    background: linear-gradient(-45deg, #0e1130, #06081c, #180724, #06010a, #2b021c);
+    background-size: 400% 400%;
+    animation: gradientMove 45s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: serif;
-    color: white;
+    position: relative;
   }
 
-  /* Dark thumbnail background */
-  .landing {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background:
-      linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-      url("teapartythumbnail.png") center center / cover no-repeat;
-    z-index: -1;
+   @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   /* Background video (hidden initially) */
