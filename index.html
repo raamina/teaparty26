@@ -82,7 +82,55 @@
 #first-text {
   position: absolute;       /* absolute positioning */
   top: 16%;                 /* adjust Y position */
-  left: 18%;                /* adjust X position */
+  left: 14%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 3rem;
+  font-family: serif;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
+#second-text {
+  position: absolute;       /* absolute positioning */
+  top: 16%;                 /* adjust Y position */
+  left: 50%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 3rem;
+  font-family: serif;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
+#third-text {
+  position: absolute;       /* absolute positioning */
+  top: 16%;                 /* adjust Y position */
+  left: 86%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 3rem;
+  font-family: serif;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
+#third-subtext {
+  position: absolute;       /* absolute positioning */
+  top: 19%;                 /* adjust Y position */
+  left: 86%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 2rem;
+  font-family: serif;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
+#teaparty {
+  position: absolute;       /* absolute positioning */
+  top: 50%;                 /* adjust Y position */
+  left: 50%;                /* adjust X position */
   transform: translate(-50%, -50%); /* center at XY */
   color: white;
   font-size: 3rem;
@@ -114,7 +162,12 @@
 </div>
 
 <div id="first-text">saturday</div>
-
+<div id="second-text">02/28</div>
+<div id="third-text">111 Brown Street</div> 
+<div id="third-subtext">(North House)</div> 
+<div id="teaparty">tea party 2026</div> 
+<div id="thirdannual">(third annual)</div>
+ 
 <script>
   const button = document.getElementById("start-btn");
   const video = document.getElementById("bg-video");
@@ -131,7 +184,22 @@
   setTimeout(() => {
     const text = document.getElementById("first-text");
     text.style.display = "block"; // appears instantly
-  }, 2000);  // 3000ms = 3 seconds
+  }, 2000); 
+   
+  setTimeout(() => {
+    const text = document.getElementById("second-text");
+    text.style.display = "block"; // appears instantly
+  }, 4000); 
+
+  setTimeout(() => {
+    const text = document.getElementById("third-text");
+    text.style.display = "block"; // appears instantly
+  }, 6000); 
+
+  setTimeout(() => {
+    const text = document.getElementById("third-subtext");
+    text.style.display = "block"; // appears instantly
+  }, 7000); 
    
   });
 
