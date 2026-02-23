@@ -130,34 +130,33 @@
 
 .marquee-container {
   position: fixed;      /* stays in place on scroll */
-  bottom: 0;            /* distance from bottom */
+  bottom: 10%;            /* distance from bottom */
   left: 0;              /* start at left edge */
   width: 100%;          /* full width */
   overflow: hidden;
-  background: rgba(0,0,0,0.5); /* optional background */
   z-index: 10;
 }
 
 .marquee {
   display: inline-block;
   white-space: nowrap;   /* keep text on one line */
-  animation: marquee 10s linear infinite; /* scroll speed */
+  animation: marquee 20s linear infinite; /* scroll speed */
 }
 
 .marquee span {
   font-size: 1.5rem;    /* adjust text size */
   color: white;
   font-family: serif;
-  padding-right: 2rem;  /* space between repeated texts */
+  padding-right: 4rem;  /* space between repeated texts */
 }
 
 /* Keyframes for scrolling from right to left */
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(-100%); /* start off the left edge */
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(100%);  /* move to off the right edge */
   }
 }
 
@@ -202,7 +201,7 @@
 
  <div class="marquee-container">
   <div class="marquee">
-    <span>tea upstairs @ 10:00 pm • dancing downstairs, DJ set @ 10:30 pm • i will raffle off a joint (for free) also. winner picked @ 12 am • </span>
+    <span>tea upstairs @ 10:00 pm • dancing downstairs, DJ set @ 10:30 pm • i will raffle off a joint (for free) also. winner picked @ 12 am • tea upstairs @ 10:00 pm • dancing downstairs, DJ set @ 10:30 pm • i will raffle off a joint (for free) also. winner picked @ 12 am • </span>
   </div>
 </div>
 
