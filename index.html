@@ -179,6 +179,7 @@
 <div id="thirdannual">(third annual)</div>
  
 <script>
+  let clickStage = 0; // 0 = envelope not clicked yet
   const button = document.getElementById("start-btn");
   const video = document.getElementById("bg-video");
   const audio = document.getElementById("bg-audio");
@@ -190,19 +191,33 @@
     document.querySelector(".landing").style.display = "none";
     button.style.display = "none";
 
-    clickStage = 1; // now ready for first anywhere click
+    clickStage = 1
   });
 
  // Anywhere click sequence
 document.addEventListener("click", () => {
   if (clickStage === 1) {
-    // Show first text
+    document.getElementById("first-text").style.display = "none";
+  } 
+  else if (clickStage === 2) {
+    // Show second text
     document.getElementById("first-text").style.display = "block";
-    clickStage = 2; // next click triggers second text
-  } else if (clickStage === 2) {
+    clickStage = 3; 
+  }
+  else if (clickStage === 3) {
     // Show second text
     document.getElementById("second-text").style.display = "block";
-    clickStage = 3; // no more automatic triggers
+    clickStage = 4;
+  }
+ else if (clickStage === 4) {
+    // Show second text
+    document.getElementById("third-text").style.display = "block";
+    clickStage = 5; 
+  }
+ else if (clickStage === 5) {
+    // Show second text
+    document.getElementById("third-subtext").style.display = "block";
+    clickStage = 6; 
   }
  
 });
