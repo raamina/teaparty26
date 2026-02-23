@@ -130,7 +130,7 @@
 
 .marquee-container {
   position: fixed;      /* stays in place on scroll */
-  bottom: 10%;            /* distance from bottom */
+  bottom: 3%;            /* distance from bottom */
   left: 0;              /* start at left edge */
   width: 100%;          /* full width */
   overflow: hidden;
@@ -152,12 +152,8 @@
 
 /* Keyframes for scrolling from right to left */
 @keyframes marquee {
-  0% {
-    transform: translateX(-100%); /* start off the left edge */
-  }
-  100% {
-    transform: translateX(100%);  /* move to off the right edge */
-  }
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 #teaparty {
