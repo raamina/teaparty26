@@ -166,6 +166,15 @@
 <div id="second-text">02/28</div>
 <div id="third-text">111 Brown Street</div> 
 <div id="third-subtext">(North House)</div> 
+
+ <div id="bottom-two">tea upstairs</div>
+ <div id="sub-two"> @ 10:00 pm</div>
+ 
+ <div id="bottom-three">dancing downstairs</div>
+ <div id="sub-three">DJ set @ 10:30 pm</div>
+
+ <div id="jointraffle">i will raffle off a joint (for free) also. winner decided @ 12 am</div>
+ 
 <div id="teaparty">tea party 2026</div> 
 <div id="thirdannual">(third annual)</div>
  
@@ -181,28 +190,22 @@
     document.querySelector(".landing").style.display = "none";
     button.style.display = "none";
 
-    // Show text after 3 seconds
-  setTimeout(() => {
-    const text = document.getElementById("first-text");
-    text.style.display = "block"; // appears instantly
-  }, 2000); 
-   
-  setTimeout(() => {
-    const text = document.getElementById("second-text");
-    text.style.display = "block"; // appears instantly
-  }, 3500); 
-
-  setTimeout(() => {
-    const text = document.getElementById("third-text");
-    text.style.display = "block"; // appears instantly
-  }, 5000); 
-
-  setTimeout(() => {
-    const text = document.getElementById("third-subtext");
-    text.style.display = "block"; // appears instantly
-  }, 6200); 
-   
+    clickStage = 1; // now ready for first anywhere click
   });
+
+ // Anywhere click sequence
+document.addEventListener("click", () => {
+  if (clickStage === 1) {
+    // Show first text
+    document.getElementById("first-text").style.display = "block";
+    clickStage = 2; // next click triggers second text
+  } else if (clickStage === 2) {
+    // Show second text
+    document.getElementById("second-text").style.display = "block";
+    clickStage = 3; // no more automatic triggers
+  }
+ 
+});
 
 </script>
 
