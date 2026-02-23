@@ -140,7 +140,7 @@
 .marquee {
   display: inline-block;
   white-space: nowrap;   /* keep text on one line */
-  animation: marquee 50s linear infinite; /* scroll speed */
+  animation: marquee 54s linear infinite; /* scroll speed */
 }
 
 .marquee span {
@@ -202,6 +202,16 @@
   font-family: serif;
   display: none;            /* hidden initially */
   text-align: center;
+}
+
+ .flash {
+  animation: flash 1.5s infinite;
+}
+
+@keyframes flash {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.2; }
+  100% { opacity: 1; }
 }
 
 </style>
@@ -307,6 +317,9 @@ document.addEventListener("click", () => {
  else if (clickStage === 9) {
     // Show second text
     document.getElementById("thirdannual").style.display = "block";
+    document.getElementById("tea").classList.add("flash");
+    document.getElementById("party").classList.add("flash");
+    document.getElementById("year").classList.add("flash");
     clickStage = 10; 
   }
  
