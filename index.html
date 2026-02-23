@@ -198,6 +198,7 @@
 document.addEventListener("click", () => {
   if (clickStage === 1) {
     document.getElementById("first-text").style.display = "none";
+    clickStage = 2;
   } 
   else if (clickStage === 2) {
     // Show second text
