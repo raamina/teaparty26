@@ -118,7 +118,7 @@
 
 #third-subtext {
   position: absolute;       /* absolute positioning */
-  top: 21%;                 /* adjust Y position */
+  top: 22%;                 /* adjust Y position */
   left: 83%;                /* adjust X position */
   transform: translate(-50%, -50%); /* center at XY */
   color: white;
@@ -156,9 +156,45 @@
   100% { transform: translateX(-100%); }
 }
 
-#teaparty {
+#tea {
   position: absolute;       /* absolute positioning */
   top: 50%;                 /* adjust Y position */
+  left: 30%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 5rem;
+  font-family: serif;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
+#party {
+  position: absolute;       /* absolute positioning */
+  top: 50%;                 /* adjust Y position */
+  left: 50%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 5rem;
+  font-family: serif;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
+#year {
+  position: absolute;       /* absolute positioning */
+  top: 50%;                 /* adjust Y position */
+  left: 70%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 5rem;
+  font-family: serif;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+ 
+#thirdannual {
+  position: absolute;       /* absolute positioning */
+  top: 40%;                 /* adjust Y position */
   left: 50%;                /* adjust X position */
   transform: translate(-50%, -50%); /* center at XY */
   color: white;
@@ -206,7 +242,9 @@
   </div>
 </div>
  
-<div id="teaparty">tea party 2026</div> 
+<div id="tea">tea</div> 
+<div id="party">party</div> 
+<div id="year">2026!</div> 
 <div id="thirdannual">(third annual)</div>
  
 <script>
@@ -250,6 +288,26 @@ document.addEventListener("click", () => {
     // Show second text
     document.getElementById("third-subtext").style.display = "block";
     clickStage = 6; 
+  }
+ else if (clickStage === 6) {
+    // Show second text
+    document.getElementById("tea").style.display = "block";
+    clickStage = 7; 
+  }
+ else if (clickStage === 7) {
+    // Show second text
+    document.getElementById("party").style.display = "block";
+    clickStage = 8; 
+  }
+ else if (clickStage === 8) {
+    // Show second text
+    document.getElementById("year").style.display = "block";
+    clickStage = 9; 
+  }
+ else if (clickStage === 9) {
+    // Show second text
+    document.getElementById("thirdannual").style.display = "block";
+    clickStage = 10; 
   }
  
 });
