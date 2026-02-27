@@ -195,6 +195,28 @@
   text-align: center;
 }
 
+#love {
+  position: absolute;       /* absolute positioning */
+  top: 70%;                 /* adjust Y position */
+  left: 30%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 3rem;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
+#unlove {
+  position: absolute;       /* absolute positioning */
+  top: 70%;                 /* adjust Y position */
+  left: 70%;                /* adjust X position */
+  transform: translate(-50%, -50%); /* center at XY */
+  color: white;
+  font-size: 3rem;
+  display: none;            /* hidden initially */
+  text-align: center;
+}
+
  .flash {
   animation: flash 0.2s infinite;
 }
@@ -247,6 +269,9 @@
 <div id="party">party</div> 
 <div id="year">2026!</div> 
 <div id="thirdannual">(take 3)</div>
+
+<div id="love">bring your loved ones</div>
+<div id="unlove">do not bring your unloved ones</div>
  
 <script>
   let clickStage = 0; // 0 = envelope not clicked yet
@@ -312,6 +337,16 @@ document.addEventListener("click", () => {
     document.getElementById("party").classList.add("flash");
     document.getElementById("year").classList.add("flash");
     clickStage = 10; 
+  }
+ else if (clickStage === 10) {
+    // Show second text
+    document.getElementById("love").style.display = "block";
+    clickStage = 11; 
+  }
+ else if (clickStage === 11) {
+    // Show second text
+    document.getElementById("unlove").style.display = "block";
+    clickStage = 12; 
   }
  
 });
